@@ -6,7 +6,7 @@ function TopicList(props) {
 
   return (
     <div className="topic_list_container" >
-      {props.topics.map(topic => <TopicTile key={topic._id} topic={topic} handleClick={props.deleteTopic}/>)}
+      {props.topics.map(topic => <TopicTile key={topic._id} topic={topic} voteTopic={props.voteTopic} handleClick={props.deleteTopic}/>)}
     </div>
   )
 }
