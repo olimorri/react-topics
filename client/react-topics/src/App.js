@@ -16,7 +16,6 @@ function App() {
   }
 
   const createTopic = (input) => {
-    console.log(input)
     ApiService.postTopic(input)
     .then(topic => {
       setTopics(prevTopics => [...prevTopics, topic])

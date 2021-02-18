@@ -22,7 +22,6 @@ function deleteTopic(id) {
 }
 
 function fetchRequest(path, options) {
-  console.log(options)
   return fetch(baseURL + path, options)
   .then(res => res.status <= 400 ? res : Promise.reject())
   .then(res => res.status === 204 ? res: res.json())
