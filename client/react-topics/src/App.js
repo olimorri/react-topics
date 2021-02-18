@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import TopicList from'./TopicList/TopicList';
 import ApiService from './ApiService';
+import TopicInput from'./TopicInput/TopicInput';
 
 function App() {
 
@@ -14,6 +15,14 @@ function App() {
     })
   }
 
+  const createTopic = (input) => {
+    console.log(input)
+    ApiService.postTopic(input)
+    .then(topic => {
+      setTopics(prevTopics => [...prevTopics, topic])
+    })
+  }
+
   useEffect(() => {
     ApiService.getTopics()
     .then(topics => setTopics(topics))
@@ -22,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      
+      <TopicInput createTopic={createTopic}/>
       <TopicList topics={topics} deleteTopic={deleteTopic}/>
       
     </div>
