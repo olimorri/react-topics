@@ -10,6 +10,7 @@ function TopicInput(props) {
   }
 
   function handleClick(e) {
+    if (!input) alert('No input detected')
     e.preventDefault();
     props.createTopic(input);
     setInput('');
