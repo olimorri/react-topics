@@ -22,3 +22,14 @@ exports.postTopics = async (req,res) => {
     res.sendStatus(500);
   }
 }
+
+exports.deleteTopic = async (req,res) => {
+  try {
+    const { id } = req.params;
+    await Topic.findByIdAndDelete(id)
+    res.sendStatus(204);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
+}
