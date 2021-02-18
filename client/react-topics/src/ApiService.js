@@ -4,11 +4,13 @@ function getTopics () {
   return fetchRequest('/topics');
 }
 
-function postTopics(body) {
+function postTopic(body) {
   return fetchRequest(`/topics`, {
     method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(body)
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({title: body}) //to make this work we need to stringify the whole body
   })
 }
 
@@ -20,6 +22,7 @@ function deleteTopic(id) {
 }
 
 function fetchRequest(path, options) {
+  console.log(options)
   return fetch(baseURL + path, options)
   .then(res => res.status <= 400 ? res : Promise.reject())
   .then(res => res.status === 204 ? res: res.json())
@@ -28,4 +31,4 @@ function fetchRequest(path, options) {
   })
 }
 
-export default { getTopics, postTopics, deleteTopic };
+export default { getTopics, postTopic, deleteTopic };
