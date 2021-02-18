@@ -8,7 +8,10 @@ function App() {
   const [topics, setTopics] = useState([]);
 
   const deleteTopic = (id) => {
-    console.log(id)
+    ApiService.deleteTopic(id)
+    .then(() => {
+      setTopics(topics.filter(topic => topic._id !== id))
+    })
   }
 
   useEffect(() => {
