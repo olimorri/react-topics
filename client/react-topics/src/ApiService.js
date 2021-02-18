@@ -21,6 +21,13 @@ function deleteTopic(id) {
   })
 }
 
+function voteTopic(id, dir) {
+  return fetchRequest(`/topics/${id}/${dir}`, {
+    method: "PUT",
+    headers: {"Content-Type": "application/json"},
+  })
+}
+
 function fetchRequest(path, options) {
   return fetch(baseURL + path, options)
   .then(res => res.status <= 400 ? res : Promise.reject())
@@ -30,4 +37,4 @@ function fetchRequest(path, options) {
   })
 }
 
-export default { getTopics, postTopic, deleteTopic };
+export default { getTopics, postTopic, deleteTopic, voteTopic };
