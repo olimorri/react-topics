@@ -1,0 +1,29 @@
+.topic_tile_container {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px -1px #333;
+  align-items: center;
+}
+
+.topic_tile_voting {
+  flex: 1;
+}
+
+.btn_vote {
+  border: none;
+  outline: none;
+  font-size: 1.5em;
+  background-color: transparent;
+}
+
+.topic_tile_title {
+  flex: 3;
+  font-weight: 700;
+}
+
+.topic_tile_btn_delete {
+  flex: 1;
+  font-size: 1.5em;
+}
