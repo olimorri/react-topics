@@ -70,6 +70,14 @@ Use ApiService within the useEffect in order to get the topics, then setTopics
 
 ## Create basic file structure
 
-Render basic info from topics in order to make sure get is working.
+Render basic info from topics in order to make sure get is working, minimal styling.
 
 Begin to create, modify and export all files into the relevant ones we need.
+
+## ApiService file
+
+Build functionality one at a time, test and move onto the next.
+
+## Styling
+
+Style towards the end, don't waste too much time in the test - make sure it's functional first.
