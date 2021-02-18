@@ -48,7 +48,8 @@ function App() {
   return (
     <div className="App">
       <TopicInput createTopic={createTopic}/>
-      <TopicList topics={topics} deleteTopic={deleteTopic} voteTopic={voteTopic}/>
+      {!topics.length ? <p>No topics yet, write yours to get started!</p> : <TopicList topics={topics} deleteTopic={deleteTopic} voteTopic={voteTopic}/>}
+      
       
     </div>
   );
