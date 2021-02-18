@@ -33,3 +33,21 @@ exports.deleteTopic = async (req,res) => {
     res.sendStatus(500);
   }
 }
+
+exports.voteUp = async (req, res) => voteTopic(req, res, 1);
+
+exports.voteDown = async (req, res) => voteTopic(req, res, -1);
+
+const voteTopic = async (req, res, dir) => {
+  try {
+    const { id } = req.params;
+    const topic = await Topic.findByIdAndUpdate(id,
+      { $inc: {votes: dir} },
+      {new: true}
+      );
+    res.send(topic);
+  } catch (err) {
+    console.log(err)
+    res.sendStatus(500);
+  }
+}
