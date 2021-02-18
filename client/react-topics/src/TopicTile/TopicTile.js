@@ -12,7 +12,7 @@ function TopicTile(props) {
       <div className="topic_tile_title">
         <p>{props.topic.title}</p>
       </div>
-      <div class="topic_tile_btn_delete">🗑</div>
+      <button onClick={() => props.handleClick(props.topic._id)} className="topic_tile_btn_delete">🗑</button>
     </div>
   )
 }

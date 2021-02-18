@@ -25,5 +25,8 @@
 
 .topic_tile_btn_delete {
   flex: 1;
+  outline: none;
+  border: none;
+  background-color: transparent;
   font-size: 1.5em;
 }
